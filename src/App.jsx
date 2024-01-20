@@ -1,16 +1,22 @@
-import { useState } from 'react'
-
+import 'react-router-dom'
 import './App.css'
+import { BrowserRouter, Route, Routes, json } from 'react-router-dom'
+import LoginP from './pages/LoginP'
+import AdminP from './pages/AdminP'
+import AddProuductsP from './pages/AddProuductsP'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ let localValue=JSON.parse(localStorage.getItem('login'))
   return (
-    <>
-          <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <BrowserRouter>
+      {
+        localValue?<Routes>
+          <Route path='/' element={<AdminP/>}/>
+          <Route path='/add' element={<AddProuductsP/>}/>
+        </Routes>:<LoginP/>
+      }
+      
+    </BrowserRouter>
   )
 }
 
