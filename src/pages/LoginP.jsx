@@ -12,7 +12,7 @@ let [values,setVal]=useState(
     //     event.preventDefault()
     // }
     let HendalSubmit=()=>{
-        if(values.name!=='' && values.parol!=='' && values.parol.length>8){
+        if(values.name!=='' && values.parol!=='' && values.parol.length>4){
            return  localStorage.setItem('login',JSON.stringify(values))
         }
 

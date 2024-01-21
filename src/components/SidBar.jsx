@@ -2,6 +2,8 @@ import { Fragment } from "react"
 import mask from '../assets/mask.svg'
 import savat from '../assets/1.svg'
 import profil from '../assets/Профиль.svg'
+import 'react-router-dom'
+import { NavLink } from "react-router-dom"
 const SidBar = () => {
   return (
     <Fragment>
@@ -11,8 +13,8 @@ const SidBar = () => {
         </div>
         <div className=" flex w-[49px] h-[150px] flex-col">
             <button className="w-full h-[50px] rounded-lg flex items-center justify-center hover:bg-[#6C6DE5]"><i className='bx bxs-cog text-[#E9E9FF] text-[30px]'></i></button>
-            <button className="w-full h-[50px] rounded-lg flex items-center justify-center hover:bg-[#6C6DE5]"><img className="w-[50px] h-[30px]" src={profil} alt="alt" /></button>
-            <button className="w-full h-[50px] rounded-lg flex items-center justify-center hover:bg-[#6C6DE5]"><img className="w-[50px] h-[30px]" src={savat} alt="alt" /></button>
+            <NavLink to='/profile'><button className="w-full h-[50px] rounded-lg flex items-center justify-center hover:bg-[#6C6DE5]"><img className="w-[50px] h-[30px]" src={profil} alt="alt" /></button></NavLink>
+            <NavLink to='/'><button className="w-full h-[50px] rounded-lg flex items-center justify-center hover:bg-[#6C6DE5]"><img className="w-[50px] h-[30px]" src={savat} alt="alt" /></button></NavLink>
         </div>
       </div>
     </Fragment>
